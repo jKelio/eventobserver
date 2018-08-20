@@ -1,0 +1,34 @@
+{
+  "name": "event-observer",
+  "version": "1.0.0",
+  "description": "A simple event observer written in Vanilla TypeScript for the event communication between different JavaScript Layers using in pure JavaScript and of course Vanilla TypeScript projects. Maybe it is helpful for a MVC software architecture.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha -r ts-node/register test/**/*.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jKelio/eventobserver.git"
+  },
+  "keywords": [
+    "event",
+    "observer",
+    "typescript",
+    "javascript"
+  ],
+  "author": "Leon Jäkel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jKelio/eventobserver/issues"
+  },
+  "homepage": "https://github.com/jKelio/eventobserver#readme",
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.1"
+  }
+}
