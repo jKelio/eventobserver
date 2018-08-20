@@ -1,6 +1,6 @@
 {
   "name": "@jkelio/event-observer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple event observer written in Vanilla TypeScript for the event communication between different JavaScript Layers using in pure JavaScript and of course Vanilla TypeScript projects. Maybe it is helpful for a MVC software architecture.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
