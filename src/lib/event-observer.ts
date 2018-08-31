@@ -1,18 +1,18 @@
 import { EventSubject } from "./event-subject";
 
-export class EventObserver implements EventSubject {
-  private observables: Array<Function> = [];
+export class EventObserver<T> implements EventSubject<T> {
+  private observables: Array<T> = [];
 
   constructor() {}
   
-  public subscribe(fn: Function): void {
-    const _observable: Function = fn;
+  public subscribe(fn: T): void {
+    const _observable: T = fn;
     this.observables.push(_observable);
   }
 
-  public unsubscribe(fn: Function): void {
-    const _observable: Function = fn;
-    this.observables = this.observables.filter((observable: Function) => {
+  public unsubscribe(fn: T): void {
+    const _observable: T = fn;
+    this.observables = this.observables.filter((observable: T) => {
       return observable !== _observable;
     });
   }
@@ -24,9 +24,9 @@ export class EventObserver implements EventSubject {
   public emit(...args: Array<any>): Promise<any> {
     const observedValues: Array<Promise<any>> = [];
     try {
-      this.observables.forEach((observable: Function) => {
+      this.observables.forEach((observable: T) => {
         const observedValue: Promise<any> = Promise.resolve(
-          observable(...args)
+          observable instanceof Function ? observable(...args) : observable
         );
         observedValues.push(observedValue);
       });

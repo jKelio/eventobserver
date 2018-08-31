@@ -1,9 +1,9 @@
-export interface EventSubject {
-    subscribe(fn: Function): void;
+export interface EventSubject<T> {
+    subscribe(fn: T): void;
 
-    unsubscribe(fn: Function): void;
+    unsubscribe(fn: T): void;
 
-    unsubscribeAll(fn: Function): void;
+    unsubscribeAll(fn: T): void;
 
     emit(...args: Array<any>): void; //Promise<Array<any>>;
 }
