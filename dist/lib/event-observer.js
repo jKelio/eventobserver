@@ -21,7 +21,7 @@ class EventObserver {
         const observedValues = [];
         try {
             this.observables.forEach((observable) => {
-                const observedValue = Promise.resolve(observable(...args));
+                const observedValue = Promise.resolve(observable instanceof Function ? observable(...args) : observable);
                 observedValues.push(observedValue);
             });
         }

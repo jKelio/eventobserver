@@ -1,6 +1,6 @@
-export interface EventSubject {
-    subscribe(fn: Function): void;
-    unsubscribe(fn: Function): void;
-    unsubscribeAll(fn: Function): void;
+export interface EventSubject<T> {
+    subscribe(fn: T): void;
+    unsubscribe(fn: T): void;
+    unsubscribeAll(fn: T): void;
     emit(...args: Array<any>): void;
 }
